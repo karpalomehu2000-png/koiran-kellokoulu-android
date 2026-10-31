@@ -101,7 +101,7 @@ jobs:
 
           npx cap init "Koiran kellokoulu" "fi.karpalomehu.koirankellokoulu" --web-dir=www
 
-      -       - name: Create Android project
+      - name: Create Android project
         run: |
           npx cap add android
 
