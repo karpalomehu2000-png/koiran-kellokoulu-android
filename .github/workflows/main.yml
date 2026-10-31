@@ -124,7 +124,11 @@ jobs:
 
           p.write_text(s)
           PY
-
+          npm install --no-save --package-lock=false @capacitor/assets sharp
+          mkdir -p assets
+          node -e "require('sharp')('koiran_kellokoulu_kuvake.jpg').resize(1024,1024,{fit:'cover'}).png().toFile('assets/icon.png')"
+          npx capacitor-assets generate --android
+                    
           npx cap sync android
 
       - name: Build APK
